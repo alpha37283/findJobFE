@@ -3,13 +3,13 @@ import { View, Text, StyleSheet, SafeAreaView, Image, Pressable, TextInput, useW
 import { useFonts } from 'expo-font';
 
 
-import colors1 from './utils/colors/colors1';
-import { styleText, styleImage, styleView, styleButton } from './utils/styles/indexImports.js';
-import styleContainer from './utils/styles/containers.js';
+import colors1 from '../utils/colors/colors1.js';
+import { styleText, styleImage, styleView, styleButton } from '../utils/styles/indexImports.js';
+import styleContainer from '../utils/styles/containers.js';
 
-import loginSeller from './api/apiConnections.js';
+import loginSeller from '../api/apiConnections.js';
 
-function SignIn({ navigation }) {
+function loginPage({ navigation }) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ function SignIn({ navigation }) {
   const { width, height } = useWindowDimensions();
 
   const [fontsLoaded] = useFonts({
-    'Ubuntu-Medium': require('./assets/fonts/Ubuntu-Medium.ttf'),
+    'Ubuntu-Medium': require('../assets/fonts/Ubuntu-Medium.ttf'),
   });
   
   if (!fontsLoaded) {
@@ -50,32 +50,33 @@ function SignIn({ navigation }) {
           </View>
 
           <View style={styles.upper}>
-            <View style={{ marginTop: height * 0.03, alignItems: 'center' }}>
-              <View style={[styles.inputContainer, { width: width * 0.9 }]}>
-                <Image style={styleImage.imgSmall} source={require('./assets/EmailLogo.png')} />
-                <TextInput
-                  style={[styles.email, { flex: 1, alignItems: 'center', marginLeft: width * 0.02 }]}
-                  placeholder="E-mail / Username"
-                  value={email}
-                  onChangeText={setEmail}
-                  keyboardType="email-address"
-                  returnKeyType="next"
-                  onSubmitEditing={() => this.passwordInput.focus()}
-                  blurOnSubmit={false}
-                />
-              </View>
+                <View style={{ marginTop: height * 0.03, alignItems: 'center',}}>
+                  
+                    <View style={[styles.inputContainer, { width: width * 0.9 }]}>
+                            <Image style={styleImage.imgSmall} source={require('../assets/images/EmailLogo.png')} />
+                            <TextInput
+                            style={[styles.email, { flex: 1, alignItems: 'center', marginLeft: width * 0.02 }]}
+                            placeholder="E-mail / Username"
+                            value={email}
+                            onChangeText={setEmail}
+                            keyboardType="email-address"
+                            returnKeyType="next"
+                            onSubmitEditing={() => this.passwordInput.focus()}
+                            blurOnSubmit={false}
+                            />
+                    </View>
 
               <View style={[styles.inputContainer, { width: width * 0.9 }]}>
-                <Image style={styleImage.imgSmall} source={require('./assets/Lock.png')} />
-                <TextInput
-                  ref={(input) => { this.passwordInput = input; }}
-                  style={{ flex: 1, marginLeft: width * 0.02 }}
-                  placeholder="Password"
-                  value={password}
-                  onChangeText={setPassword}
-                  secureTextEntry
-                  returnKeyType="done"
-                />
+                    <Image style={styleImage.imgSmall} source={require('../assets/images/Lock.png')} />
+                        <TextInput
+                        ref={(input) => { this.passwordInput = input; }}
+                        style={{ flex: 1, marginLeft: width * 0.02 }}
+                        placeholder="Password"
+                        value={password}
+                        onChangeText={setPassword}
+                        secureTextEntry
+                        returnKeyType="done"
+                        />
               </View>
 
               <Text style={[styleText.textSmall, { marginBottom: height * 0.01, marginLeft: width * 0.55 }]}>
@@ -98,10 +99,10 @@ function SignIn({ navigation }) {
           <View style={styles.sgnWith}>
             <Text style={[styleText.textSmall, { fontFamily: 'Ubuntu-Medium', marginRight: width * 0.05 }]}>Sign In with:</Text>
             <View style={styles.logoContainer}>
-              <Image style={styleImage.imgSmall} source={require('./assets/AppleLogo.png')} />
+              <Image style={styleImage.imgSmall} source={require('../assets/images/AppleLogo.png')} />
             </View>
             <View style={[styles.logoContainer, { marginLeft: width * 0.04, marginRight: width * 0.15 }]}>
-              <Image style={styleImage.imgSmall} source={require('./assets/GoogleLogo.png')} />
+              <Image style={styleImage.imgSmall} source={require('../assets/images/GoogleLogo.png')} />
             </View>
           </View>
         </SafeAreaView>
@@ -140,4 +141,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+export default loginPage;
