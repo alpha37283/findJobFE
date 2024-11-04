@@ -1,5 +1,5 @@
 const colors1 = {
-    primary: '#4CAF50', // light green
+    primary: '#6DD75F', // light green
     secondary: '#007BFF', // dark green
     accent: '#e74c3c', // Red
     background: '#ecf0f1', // Light Gray

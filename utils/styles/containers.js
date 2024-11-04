@@ -9,6 +9,12 @@ const styleContainer = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerMainWhite: {
+    flex: 1,
+    backgroundColor: 'white', 
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default styleContainer;

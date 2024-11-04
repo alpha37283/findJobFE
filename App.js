@@ -2,11 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './pages/loginPage';
 import SignUp from './pages/signUpPage';
+import HomePage from './pages/homePage';
+import CardSmall from './components/cardSmallP1';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <SignUp/>
+      <HomePage></HomePage>
     </View>
   );
 }
