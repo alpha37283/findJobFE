@@ -8,7 +8,7 @@ function CardSmall() {
 
   return (
     <View style={styles.main}>
-      <View style={[styles.card, {width : width * 0.4, height : height * 0.12, borderRadius: width * 0.06}]}>
+      <View style={[styles.card, {width : width * 0.4, height : height * 0.12, borderRadius: width * 0.06,}]}>
         <Text style={[styleTextBlack.textSmallBold, {letterSpacing : 1}]}>In November</Text>
         <Text style={[styleTextBlack.textMediumBold, {marginTop : width * 0.025}]}>$5,234</Text>
       </View>
@@ -33,7 +33,6 @@ function CardSmall() {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
     flexDirection: 'row',       // Row layout for the cards
     flexWrap: 'wrap',            // Wrap to a new line if they exceed the width
     justifyContent: 'space-around', // Space around each card

@@ -5,6 +5,7 @@ import styleContainer from '../utils/styles/containers.js';
 import { useFonts } from 'expo-font';
 import CardSmall from '../components/cardSmallP1.js';
 import { Divider } from 'react-native-elements';
+import ActiveServices from '../components/activeServices.js';
 
 function HomePage() {
 
@@ -21,10 +22,10 @@ function HomePage() {
 
     return (
         <View style={styles.container}>
-            <SafeAreaView style={styles.safeArea}>
-                <View style={[styles.viewProfile, {height : height * 0.15,width: width, marginTop : height * 0.05, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }]}>
+         
+                <View style={[styles.viewProfile, { height : height * 0.15,width: width, marginTop : height * 0.03, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }]}>
                     <View style={[styles.avatar]}>
-                        <Image style={[styleImage.imgMedium, { borderRadius: width * 0.1 }]} source={require('../assets/images/alpha.png')} />
+                        <Image style={[styleImage.imgMedium, { borderRadius: width * 0.1 }]} source={require('../assets/images/alpha.jpg')} />
                     </View>
                     <View style={[styles.text, {marginLeft : 60}]}>
                         <View>
@@ -38,9 +39,10 @@ function HomePage() {
                 
                 <Divider width={2} color="#C1C1C1" style={{ width: width * 0.85, alignSelf: 'center' }} />
 
-                {/* CardSmall Component */}
                 <CardSmall />
-            </SafeAreaView>
+
+                <ActiveServices></ActiveServices>
+         
         </View>
     );
 }
@@ -51,7 +53,6 @@ const styles = StyleSheet.create({
     },
     safeArea: {
         flex: 1,
-        paddingHorizontal: 10,
     },
     viewProfile: {
         color: 'black',

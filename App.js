@@ -5,11 +5,13 @@ import SignUp from './pages/signUpPage';
 import HomePage from './pages/homePage';
 import CardSmall from './components/cardSmallP1';
 
+import ActiveServices from './components/activeServices';
+
+import TabsNavigator from './components/tabsNavigator';
+
 export default function App() {
   return (
-    <View style={styles.container}>
       <HomePage></HomePage>
-    </View>
   );
 }
 
